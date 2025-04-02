@@ -1,6 +1,6 @@
 #' @title col_means()
 #' @description
-#' This function reads a data frame and returns a vector of the averages for each column
+#' This function reads a data frame and returns a vector of the averages for each column by using a for loop
 #' 
 #'
 #' @param df a dataframe
@@ -10,13 +10,18 @@
 #' @export
 #'
 col_means <- function(df){
-  means <- lapply(df, function(x) mean(x, na.rm = TRUE))
-  # to my understanding, lapply is the best way to apply this function to each
-  #column of the data frame. 
+  means <- c()
+  for (i in 1:ncol(df)) {
+    means <- c(means, mean(df[[i]], na.rm = TRUE))
+  }
+  
   return(means)
 }
 
 #' @title count_na
+#' @description
+#' This function uses a for loop to count the number of NAs in a vector
+#' 
 #'
 #' @param vec a vector
 #'
@@ -31,6 +36,11 @@ col_means <- function(df){
 #' count_na(c(4, NA, 4, 2))
 #' count_na(c(NA, NA, NA, 1))
 count_na <- function(vec){
-  na_count <- sum(is.na(vec))
-  return(na_count)
+  na_count <- 0
+  for (val in vec) {
+    if (is.na(val)) {
+      na_count <- na_count + 1
+    }
+  }
 }
+

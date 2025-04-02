@@ -13,7 +13,7 @@ col_means(df)
 A vector of means from a data frame
 }
 \description{
-This function reads a data frame and returns a vector of the averages for each column
+This function reads a data frame and returns a vector of the averages for each column by using a for loop
 }
 \author{
 Ronan Tanona

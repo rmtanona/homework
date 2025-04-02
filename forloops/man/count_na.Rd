@@ -13,7 +13,7 @@ count_na(vec)
 the number of NAs in a vector
 }
 \description{
-count_na
+This function uses a for loop to count the number of NAs in a vector
 }
 \examples{
 count_na(c(1, 5, 7, NA, 3, NA))
