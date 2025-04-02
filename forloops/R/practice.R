@@ -15,3 +15,22 @@ col_means <- function(df){
   #column of the data frame. 
   return(means)
 }
+
+#' @title count_na
+#'
+#' @param vec a vector
+#'
+#' @returns the number of NAs in a vector
+#' @export
+#' 
+#' 
+#' @author Ronan Tanona
+#'
+#' @examples
+#' count_na(c(1, 5, 7, NA, 3, NA))
+#' count_na(c(4, NA, 4, 2))
+#' count_na(c(NA, NA, NA, 1))
+count_na <- function(vec){
+  na_count <- sum(is.na(vec))
+  return(na_count)
+}
